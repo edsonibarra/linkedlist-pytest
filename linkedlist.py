@@ -6,7 +6,12 @@ class LinkedList:
         self.head = None
 
     def print_list(self):
-        pass
+        if self.is_empty():
+            return 'Empty list'
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.data)
+            cur_node = cur_node.next
 
     def append(self, data):
         new_node = Node(data)
@@ -20,3 +25,12 @@ class LinkedList:
 
     def is_empty(self):
         return self.head is None
+
+    def prepend(self, data):
+        new_node = Node(data)
+        if self.is_empty():
+            self.head = new_node
+            return
+        cur_node = self.head
+        new_node.next = cur_node
+        self.head = new_node
