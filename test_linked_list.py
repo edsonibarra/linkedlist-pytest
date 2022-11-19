@@ -30,3 +30,15 @@ def test_append_linked_list_method():
     assert linkedlist.head.data == 1
     assert linkedlist.head.next.data == 2
     assert len(linkedlist) == 4
+
+def test_prepend():
+    linkedlist = LinkedList()
+
+    linkedlist.append(1)
+    assert linkedlist.head.data == 1
+    linkedlist.prepend(0)
+    assert linkedlist.head.data == 0
+    
+    linkedlist2 = LinkedList()
+    linkedlist2.prepend(1)
+    assert linkedlist2.head.data == 1
