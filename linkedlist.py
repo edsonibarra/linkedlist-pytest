@@ -34,3 +34,14 @@ class LinkedList:
         cur_node = self.head
         new_node.next = cur_node
         self.head = new_node
+
+    def __len__(self):
+        if self.is_empty():
+            return 0
+
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
