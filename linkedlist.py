@@ -67,3 +67,15 @@ class LinkedList:
         if self.is_empty():
             return "empty list, couldn't delete"
 
+        cur_node = self.head
+        if position_to_delete == 0:
+            self.head = cur_node.next
+            return
+        prev = None
+        count = 0
+        while cur_node and count != position_to_delete:
+            prev = cur_node
+            cur_node = cur_node.next
+            count += 1
+        prev.next = cur_node.next
+        cur_node = None
