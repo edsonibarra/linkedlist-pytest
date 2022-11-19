@@ -45,3 +45,14 @@ class LinkedList:
             count += 1
             cur_node = cur_node.next
         return count
+
+    def delete_by_value(self, value_to_delete):
+        if self.is_empty():
+            return "empty list, couldn't delete"
+        
+        cur_node = self.head
+        if cur_node.data == value_to_delete:
+            self.head = cur_node.next
+            return
+
+        
