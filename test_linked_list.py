@@ -42,3 +42,11 @@ def test_prepend():
     linkedlist2 = LinkedList()
     linkedlist2.prepend(1)
     assert linkedlist2.head.data == 1
+
+def test_len_linked_list():
+    linkedlist = LinkedList()
+    assert len(linkedlist) == 0
+    BIG_LEN = 100
+    for i in range(BIG_LEN):
+        linkedlist.append(i)
+    assert len(linkedlist) == BIG_LEN 
