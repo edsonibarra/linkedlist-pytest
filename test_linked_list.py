@@ -80,4 +80,16 @@ def test_delete_method_position_linked_list():
     assert linkedlist.head.data == 1
     linkedlist.delete_by_position(0)
     assert linkedlist.head.data == 2
+    pos_50 = linkedlist.get_value_at_pos(50)
+    linkedlist.delete_by_position(50)
+    assert linkedlist.get_value_at_pos(50) == pos_50 + 1
+
+def test_get_value_at_pos_method_linkedlist():
+    linkedlist = LinkedList()
+    linkedlist.append(0)
+    linkedlist.append(1)
+    linkedlist.append(2)
+    linkedlist.append(3)
     
+    assert linkedlist.get_value_at_pos(2) == 2
+    assert linkedlist.get_value_at_pos(3) == 3
