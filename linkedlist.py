@@ -63,3 +63,7 @@ class LinkedList:
         prev.next = cur_node.next
         cur_node = None
 
+    def delete_by_position(self, position_to_delete):
+        if self.is_empty():
+            return "empty list, couldn't delete"
+

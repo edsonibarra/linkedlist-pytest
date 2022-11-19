@@ -49,4 +49,33 @@ def test_len_linked_list():
     BIG_LEN = 100
     for i in range(BIG_LEN):
         linkedlist.append(i)
-    assert len(linkedlist) == BIG_LEN 
+    assert len(linkedlist) == BIG_LEN
+
+def test_delete_method_linkedlist():
+    linkedlist = LinkedList()
+    EMPTY_LIST_MESSAGE = "empty list, couldn't delete"
+    assert linkedlist.delete_by_value(0) == EMPTY_LIST_MESSAGE
+    ITEMS = 100
+    for i in range(ITEMS):
+        linkedlist.append(i)
+    
+    linkedlist.delete_by_value(0)
+    assert linkedlist.head.data == 1
+    DELETE_ITEM = 99
+    linkedlist.delete_by_value(DELETE_ITEM)
+    cur_node = linkedlist.head
+    values = []
+    while cur_node:
+        values.append(cur_node.data)
+        cur_node = cur_node.next
+    assert DELETE_ITEM not in values
+
+def test_delete_method_position_linked_list():
+    linkedlist = LinkedList()
+    EMPTY_LIST_MESSAGE = "empty list, couldn't delete"
+    assert linkedlist.delete_by_position(0) == EMPTY_LIST_MESSAGE
+    for i in range(100):
+        linkedlist.append(i)
+    linkedlist.delete_by_position(0)
+    assert linkedlist.head.data == 1
+    
