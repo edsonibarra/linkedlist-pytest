@@ -79,3 +79,13 @@ class LinkedList:
             count += 1
         prev.next = cur_node.next
         cur_node = None
+    
+    def get_value_at_pos(self, position):
+        if self.is_empty():
+            return "empty list"
+        cur_node = self.head
+        count = 0
+        while cur_node and count != position:
+            cur_node = cur_node.next
+            count += 1
+        return cur_node.data

@@ -78,4 +78,6 @@ def test_delete_method_position_linked_list():
         linkedlist.append(i)
     linkedlist.delete_by_position(0)
     assert linkedlist.head.data == 1
+    linkedlist.delete_by_position(0)
+    assert linkedlist.head.data == 2
     
