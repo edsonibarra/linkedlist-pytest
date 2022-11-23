@@ -89,3 +89,16 @@ class LinkedList:
             cur_node = cur_node.next
             count += 1
         return cur_node.data
+
+    def reverse_iter(self):
+        """Reverse linked list iterative way"""
+        if self.is_empty():
+            return "empty list"
+        prev = None
+        cur_node = self.head
+        while cur_node:
+            next_node = cur_node.next
+            cur_node.next = prev
+            prev = cur_node
+            cur_node = next_node
+        self.head = prev
