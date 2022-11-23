@@ -113,6 +113,15 @@ def test_reverse_list_iter():
     while cur_node:
         after_reverse.append(cur_node.data)
         cur_node = cur_node.next
-    
+    # To execute the print lines add -s flag then running the test
+    print('\nbefore reverse')
+    for n in before_reverse:
+        print(n,end='-->')
+    print('None')
+    print('\nafter reverse')
+    for n in after_reverse:
+        print(n,end='-->')
+    print('None')
+    print()
     assert before_reverse[::-1] == after_reverse
     assert linkedlist.head.data == 3
