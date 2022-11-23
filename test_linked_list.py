@@ -93,3 +93,26 @@ def test_get_value_at_pos_method_linkedlist():
     
     assert linkedlist.get_value_at_pos(2) == 2
     assert linkedlist.get_value_at_pos(3) == 3
+
+def test_reverse_list_iter():
+    linkedlist = LinkedList()
+    linkedlist.append(0)
+    linkedlist.append(1)
+    linkedlist.append(2)
+    linkedlist.append(3)
+    
+    
+    before_reverse = []
+    cur_node = linkedlist.head
+    while cur_node:
+        before_reverse.append(cur_node.data)
+        cur_node = cur_node.next
+    linkedlist.reverse_iter()
+    after_reverse = []
+    cur_node = linkedlist.head
+    while cur_node:
+        after_reverse.append(cur_node.data)
+        cur_node = cur_node.next
+    
+    assert before_reverse[::-1] == after_reverse
+    assert linkedlist.head.data == 3
